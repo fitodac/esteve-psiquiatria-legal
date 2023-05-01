@@ -1,0 +1,7 @@
+.text-brand-pink
+.border-brand-pink
+.bg-brand-pink
+.text-red-700
+.bg-red-100
+.text-green-100
+.bg-green-700

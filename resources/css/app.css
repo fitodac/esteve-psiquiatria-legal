@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+	--color-primary: #006983;
+
+	--brand-primary: #388097;
+	--brand-secondary: #99BEC8;
+
+	--color-form: #EBF2F4;
+}
+
+
+html{
+	font-size: 16px;
+}
+
+@media(min-width: 1200px){
+	html{ font-size: 17px; }
+}
+
+
+body{
+	font-family: sans-serif;
+	color: #252B3C;
+	letter-spacing: -.3px;
+	@apply text-gray-500;
+}
+
+.container.global{
+	@apply max-w-5xl mx-auto;
+}
+
+
+
+/* 
+
+a:active,
+button:active{ opacity: .6; }
+
+
+.top-bar--corner{
+	@apply hidden -left-1 top-0 absolute pointer-events-none md:block;
+}
+
+
+.btn-primary{
+	@apply bg-primary-500 border border-primary text-white
+						leading-none font-medium text-center whitespace-nowrap
+						tracking-tight p-2.5 pt-2 transition-all rounded-xl select-none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+	@apply bg-primary-400 border-primary-400 bg-opacity-80 border-opacity-80 text-primary;
+}
+
+
+.btn-primary-outline{
+	@apply bg-white border border-primary leading-none font-medium text-center
+						tracking-tight p-2.5 pt-2 transition-all rounded-xl select-none;
+}
+
+.btn-primary-outline:hover,
+.btn-primary-outline:focus{
+	@apply bg-primary-400 border-primary-400 text-white;
+}
+
+.btn-primary:disabled{
+	@apply bg-primary-400 bg-opacity-50 border border-primary-400 border-opacity-0;
+}
+
+.btn-primary:disabled:hover,
+.btn-primary:disabled:focus{
+	@apply text-white opacity-100;
+}
+
+[class^=btn-].rounded-full{ border-radius: 1000px; }
+
+
+
+
+
+
+
+
+
+
+
+/**
+COOKIES
+**/
+div#tarteaucitronRoot{
+	background-color: rgba(20,95,175,.9);
+	@apply bottom-0 top-auto fixed z-50;
+}
+
+div#tarteaucitronRoot.tarteaucitronBeforeVisible:before{
+	display: none;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig.tarteaucitronAlertBigTop{
+	@apply bg-transparent text-left w-10/12 px-0 py-3 static transform-none rounded-none shadow-none lg:max-w-5xl;
+}
+
+body #tarteaucitronRoot button#tarteaucitronBack{
+	@apply bg-black;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig.tarteaucitronAlertBigTop::before{
+	content: "Uso de cookies";
+	color: #06f3f9;
+	@apply text-xl font-bold;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig span#tarteaucitronDisclaimerAlert{
+	@apply text-xs text-left p-0;
+}
+
+body #tarteaucitronRoot .tarteaucitronCTAButton.tarteaucitronAllow .tarteaucitronCheck::before{
+	@apply !text-brand-blue;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig button#tarteaucitronPersonalize2,
+body #tarteaucitronRoot div#tarteaucitronAlertBig button#tarteaucitronAllDenied2,
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo #tarteaucitronPrivacyUrlDialog,
+body #tarteaucitronRoot div#tarteaucitronAlertBig button#tarteaucitronCloseAlert,
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronAsk button,
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk button{
+	font-size: 13px !important;
+	@apply bg-brand-pink text-white font-bold leading-none capitalize tracking-wider px-4 py-2.5 opacity-100 rounded-xl select-none;
+}
+
+body #tarteaucitronRoot div#tarteaucitronAlertBig button#tarteaucitronPersonalize2{
+	@apply !bg-white text-brand-blue;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo #tarteaucitronPrivacyUrlDialog,
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronAsk button,
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk button{
+	@apply bg-transparent;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices{
+	@apply shadow-none rounded-xl;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset{
+	@apply pb-14;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #dialogTitle{
+	@apply text-xl font-bold select-none;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo{
+	@apply bg-transparent text-sm;
+	border: none !important;
+	padding: 0 1.5rem 2.5rem !important;
+	margin: 0 !important;
+	max-width: 100% !important;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo > strong{
+	font-size: 1.1rem;
+	@apply font-bold w-full pb-2 block;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo p + p{
+	@apply mt-7;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo p{
+	@apply text-sm;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices #tarteaucitronMainLineOffset #tarteaucitronInfo p > strong{
+	@apply text-base font-bold block;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronName{
+	padding-left: 1.5rem;
+	width: 35% !important;
+}
+
+body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronAsk{
+	@apply px-6;
+	display: flex !important;
+}
+
+@media (min-width: 768px){
+	body #tarteaucitronRoot #tarteaucitron div#tarteaucitronServices .tarteaucitronLine.tarteaucitronMainLine#tarteaucitronMainLineOffset .tarteaucitronAsk{
+		width: 50% !important;
+		margin: 0;
+	}
+}
+
+body #tarteaucitronRoot .tarteaucitronBorder{
+	@apply pt-5;
+	border-top: solid 1px rgba(255,255,255,.2) !important;
+}
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronBorder .tarteaucitronTitle > button{
+	@apply bg-black bg-opacity-20 select-none;
+}
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine{
+	@apply bg-transparent;
+}
+
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronName *{
+	color: #FFF !important;
+}
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk{
+	@apply mr-0 md:pr-6;
+}
+
+
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronName *,
+#tarteaucitron #tarteaucitronServices .tarteaucitronTitle button,
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk button,
+body #tarteaucitronRoot #tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk button > span::before{
+	color: #333 !important;
+}
+
+
+
+body #tarteaucitronRoot .tarteaucitronSelfLink{
+	display: none;
+}
+
+body #tarteaucitronRoot #tarteaucitronClosePanel{
+	@apply bg-transparent select-none;
+}
+
+
+
+.el-input__inner:focus{
+	box-shadow: none !important;
+}

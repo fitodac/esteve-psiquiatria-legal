@@ -1,0 +1,9 @@
+*
+!.gitignore
+!library/
+!challenge/
+!participants/
+!courses/
+!demo.csv
+!export/
+!webinars/
